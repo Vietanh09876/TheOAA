@@ -35,9 +35,7 @@ Nhấn vào các mục **Khối 10, 11, 12** để xem danh sách các lớp có
  ![](/Screenshots/ClassMainInfo.png "Class Main Info")
 
  ![](/Screenshots/ClassStudenList.png "Class Student List")
- 
  Nhấn vào một học sinh để xem thông tin của học sinh đó
- 
  
  ![](/Screenshots/ClassTeacherList.png "Class List Screen")
 
