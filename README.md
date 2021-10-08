@@ -34,6 +34,7 @@ Nhấn vào các mục **Khối 10, 11, 12** để xem danh sách các lớp có
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/ClassMainInfo.png" width=25% height=25%>
  
 Nhấn vào một học sinh để xem thông tin của học sinh đó.
+
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/ClassStudentList.png" width=25% height=25%>
  
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/ClassTeacherList.png" width=25% height=25%>
@@ -49,7 +50,8 @@ Nhấn vào một học sinh để xem thông tin của học sinh đó.
  
  ![](/Screenshots/OverallScoreEquation.png)
  
-  Hình ảnh bảng điểm của học sinh, có thể zoom in/out.
+  Bảng điểm của học sinh, có thể zoom in/out.
+  
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/ScoreboardScreen.png" width=25% height=25%>
  
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/PersonalInfo.png" width=25% height=25%>
