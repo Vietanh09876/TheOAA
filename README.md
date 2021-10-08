@@ -26,19 +26,21 @@ Nhấn vào **Tên** ở khu vực thanh avatar để đến **Personal Info Scr
 
 ## Class List Screen
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/ClassListScreen.png" width=25% height=25%>
+ 
 Nhấn vào **Lớp Của Tôi** để xem các thông tin lớp học của người dùng hiện tại
 Nhấn vào các mục **Khối 10, 11, 12** để xem danh sách các lớp có trong khối đó. Nhấn vào một lớp để xem thông tin của lớp đó.
 
 ### Class Info
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/ClassMainInfo.png" width=25% height=25%>
-
+ 
+Nhấn vào một học sinh để xem thông tin của học sinh đó.
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/ClassStudentList.png" width=25% height=25%>
- Nhấn vào một học sinh để xem thông tin của học sinh đó
  
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/ClassTeacherList.png" width=25% height=25%>
 
 ## Personal Info Screen
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/EvaluationInfo.png" width=25% height=25%>
+ 
  * Học Lực: Được tính theo điểm số của các môn học
  * Thể Chất: Được tính theo đánh giá của bộ môn thể dục và việc tham gia các CLB thể thao hoặc sự kiện thể thao
  * Tư Duy: Được tính theo việc tham gia các hoạt động, sự kiện của trường
@@ -47,15 +49,15 @@ Nhấn vào các mục **Khối 10, 11, 12** để xem danh sách các lớp có
  
  ![](/Screenshots/OverallScoreEquation.png)
  
- 
+  Hình ảnh bảng điểm của học sinh, có thể zoom in/out.
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/ScoreboardScreen.png" width=25% height=25%>
- Hình ảnh bảng điểm của học sinh, có thể zoom in/out.
  
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/PersonalInfo.png" width=25% height=25%>
  
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/CommunicationInfo.png" width=25% height=25%>
  
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/AchievementInfo.png" width=25% height=25%>
+ 
  Nhấn vào một **Thành Tựu** để danh sách các thành tựu được công nhận
  Nhấn vào một **Thành Tựu (Khác)** để xem toàn bộ thông tin
  Nhấn vào **dấu "+"** để yêu cầu phê duyệt một thành tựu (Khác)
