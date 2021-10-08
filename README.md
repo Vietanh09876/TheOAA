@@ -60,9 +60,9 @@ Nhấn vào một học sinh để xem thông tin của học sinh đó.
  
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/AchievementInfo.png" width=25% height=25%>
  
- Nhấn vào một **Thành Tựu** để danh sách các thành tựu được công nhận
- Nhấn vào một **Thành Tựu (Khác)** để xem toàn bộ thông tin
- Nhấn vào **dấu "+"** để yêu cầu phê duyệt một thành tựu (Khác)
+ * Nhấn vào một **Thành Tựu** để danh sách các thành tựu được công nhận
+ * Nhấn vào một **Thành Tựu (Khác)** để xem toàn bộ thông tin
+ * Nhấn vào **dấu "+"** để yêu cầu phê duyệt một thành tựu (Khác)
  
  <img src="https://raw.githubusercontent.com/Vietanh09876/TheOAA/main/Screenshots/AddSubAchievement.png" width=25% height=25%>
  
