@@ -28,6 +28,7 @@ class MoreEvaluationInfoViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         oldscoreTextViewHeightContraint.constant = oldscorecontentTextView.contentSize.height
+        print(oldscorecontentTextView.contentSize.height)
     }
     
     private func viewConfig() {
@@ -37,14 +38,16 @@ class MoreEvaluationInfoViewController: UIViewController {
         backgroundImage.image = UIImage(named: "im_BackgroundDecoBott")
         backgroundImage.contentMode = .scaleAspectFill
         
-        equationImage.contentMode = .scaleToFill
+        equationImage.contentMode = .scaleAspectFit
         equationImage.image = UIImage(named: "OverallScoreEquation")
         
-        oldscoreTitleLabel.text = "Đánh Giá:"
+        oldscoreTitleLabel.text = "Đánh Giá Hiện Tại So Với Điểm Cũ:"
+        oldscoreTitleLabel.numberOfLines = 0
         oldscoreTitleLabel.font = UIFont.systemFont(ofSize: 22, weight: .medium)
         oldscoreTitleLabel.textColor = UIColor().MainTextColor(alpha: 1)
         
         equationTitleLabel.text = "Công Thức Tính Điểm Tổng Quát:"
+        equationTitleLabel.numberOfLines = 0
         equationTitleLabel.font = UIFont.systemFont(ofSize: 22, weight: .medium)
         equationTitleLabel.textColor = UIColor().MainTextColor(alpha: 1)
         
@@ -70,11 +73,10 @@ class MoreEvaluationInfoViewController: UIViewController {
     
     func scoreDifference(x: Int) -> String {
         if scorearray[x] - previousscorearray[x] > 0 {
-            return "+\(Int(scorearray[x] - previousscorearray[x]))"
+            return "(Tăng \(Int(scorearray[x] - previousscorearray[x])))"
         }
         else {
-            return "\(Int(scorearray[x] - previousscorearray[x]))"
+            return "(Giảm \(-Int(scorearray[x] - previousscorearray[x])))"
         }
     }
-
 }

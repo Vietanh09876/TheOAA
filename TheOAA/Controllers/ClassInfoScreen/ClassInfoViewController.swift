@@ -25,9 +25,11 @@ class ClassInfoViewController: UIViewController {
     let TeachersListScreen = TeachersListViewController()
     var ChildScreenIsOn: Int!
     
-    let choiceAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-    let scorechoiceAlert = UIAlertController(title: nil, message: "Theo Năng Lực", preferredStyle: .actionSheet)
-    let patternAlert = UIAlertController(title: nil, message: "Trình Tự", preferredStyle: .actionSheet)
+    let choiceAlert1 = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    let scorechoiceAlert1 = UIAlertController(title: nil, message: "Theo Năng Lực", preferredStyle: .actionSheet)
+    let patternAlert1 = UIAlertController(title: nil, message: "Trình Tự", preferredStyle: .actionSheet)
+    let choiceAlert2 = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
     
     var SortingChoiceNumber: Int!
     var studentslist = [Student]()
@@ -48,16 +50,8 @@ class ClassInfoViewController: UIViewController {
         }
         
         CustomTabbar.ButtonDidTap(CustomTabbar.LeftButton)
-        
-        sortingAlertController()
-        
-       
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
+        sortingForStudentListAlertController()
+        sortingForTeacherListAlertController()
     }
     
     private func viewConfig() {
@@ -78,53 +72,52 @@ class ClassInfoViewController: UIViewController {
         
     }
     
-    func sortingAlertController() {
+    func sortingForStudentListAlertController() {
         let alertActionSortName = UIAlertAction(title: "Tên (A-Z)", style: .default) {[weak self] _ in
             switch self?.ChildScreenIsOn {
-            case 1:
-                self?.StudentsListScreen.choosensortingoptionLabel.text = "Sorted by: name"
             case 2:
+                self?.StudentsListScreen.sortedList = self!.SortByAlphabet(array: self!.studentslist)
+                
+            case 3:
                 self?.TeachersListScreen.choosensortingoptionLabel.text = "Sorted by: name"
             default:
                 return
             }
-            
-            print("by name")
         }
         
         let alertActionSortAbility = UIAlertAction(title: "Điểm Năng Lực", style: .default) {[weak self] _ in
-            self?.present(self!.scorechoiceAlert, animated: true, completion: nil)
+            self?.present(self!.scorechoiceAlert1, animated: true, completion: nil)
         }
         
         //MARK: scorechoiceAlert
         let alertActionSortAcademic = UIAlertAction(title: "Học Lực", style: .default) {[weak self] _ in
             self?.SortingChoiceNumber = 1
-            self?.present(self!.patternAlert, animated: true, completion: nil)
+            self?.present(self!.patternAlert1, animated: true, completion: nil)
         }
         
         let alertActionSortAdaptibility = UIAlertAction(title: "Tư Duy", style: .default) {[weak self] _ in
             self?.SortingChoiceNumber = 2
-            self?.present(self!.patternAlert, animated: true, completion: nil)
+            self?.present(self!.patternAlert1, animated: true, completion: nil)
         }
         
         let alertActionSortPhysical = UIAlertAction(title: "Thể Chất", style: .default) {[weak self] _ in
             self?.SortingChoiceNumber = 3
-            self?.present(self!.patternAlert, animated: true, completion: nil)
+            self?.present(self!.patternAlert1, animated: true, completion: nil)
         }
         
         let alertActionSortSocial = UIAlertAction(title: "Đóng Góp Cộng Đồng", style: .default) {[weak self] _ in
             self?.SortingChoiceNumber = 4
-            self?.present(self!.patternAlert, animated: true, completion: nil)
+            self?.present(self!.patternAlert1, animated: true, completion: nil)
         }
         
         let alertActionSortTrust = UIAlertAction(title: "Độ Tín Nhiệm", style: .default) {[weak self] _ in
             self?.SortingChoiceNumber = 5
-            self?.present(self!.patternAlert, animated: true, completion: nil)
+            self?.present(self!.patternAlert1, animated: true, completion: nil)
         }
         
         let alertActionSortOverall = UIAlertAction(title: "Tổng", style: .default) {[weak self] _ in
             self?.SortingChoiceNumber = 6
-            self?.present(self!.patternAlert, animated: true, completion: nil)
+            self?.present(self!.patternAlert1, animated: true, completion: nil)
         }
         
         //MARK: patternAlert
@@ -146,23 +139,36 @@ class ClassInfoViewController: UIViewController {
         let alertActionCancel3 = UIAlertAction(title: "Hủy", style: .cancel) { _ in
         }
         
-        choiceAlert.addAction(alertActionCancel1)
-        choiceAlert.addAction(alertActionSortName)
-        choiceAlert.addAction(alertActionSortAbility)
         
-        scorechoiceAlert.addAction(alertActionCancel2)
-        scorechoiceAlert.addAction(alertActionSortAcademic)
-        scorechoiceAlert.addAction(alertActionSortAdaptibility)
-        scorechoiceAlert.addAction(alertActionSortPhysical)
-        scorechoiceAlert.addAction(alertActionSortSocial)
-        scorechoiceAlert.addAction(alertActionSortTrust)
-        scorechoiceAlert.addAction(alertActionSortOverall)
+        choiceAlert1.addAction(alertActionCancel1)
+        choiceAlert1.addAction(alertActionSortName)
+        choiceAlert1.addAction(alertActionSortAbility)
         
-        patternAlert.addAction(alertActionCancel3)
-        patternAlert.addAction(alertActionSortHighToLow)
-        patternAlert.addAction(alertActionSortLowToHigh)
+        scorechoiceAlert1.addAction(alertActionCancel2)
+        scorechoiceAlert1.addAction(alertActionSortAcademic)
+        scorechoiceAlert1.addAction(alertActionSortAdaptibility)
+        scorechoiceAlert1.addAction(alertActionSortPhysical)
+        scorechoiceAlert1.addAction(alertActionSortSocial)
+        scorechoiceAlert1.addAction(alertActionSortTrust)
+        scorechoiceAlert1.addAction(alertActionSortOverall)
+        
+        patternAlert1.addAction(alertActionCancel3)
+        patternAlert1.addAction(alertActionSortHighToLow)
+        patternAlert1.addAction(alertActionSortLowToHigh)
+        
     }
     
+    func sortingForTeacherListAlertController() {
+        let alertActionCancel = UIAlertAction(title: "Hủy", style: .cancel) { _ in
+        }
+        
+        let alertActionSortName = UIAlertAction(title: "Tên (A-Z)", style: .default) {[weak self] _ in
+            self?.TeachersListScreen.choosensortingoptionLabel.text = "Sorted by: name"
+        }
+        
+        choiceAlert2.addAction(alertActionCancel)
+        choiceAlert2.addAction(alertActionSortName)
+    }
     
     //MARK: - Helper
     func passData() {
@@ -214,7 +220,7 @@ class ClassInfoViewController: UIViewController {
             self.containerForChildView.addSubview(StudentsListScreen.view)
             self.addChild(StudentsListScreen)
             StudentsListScreen.view.fitSuperviewConstraint()
-
+            StudentsListScreen.sortedList = SortByAlphabet(array: studentslist)
         case 3:
             self.containerForChildView.addSubview(TeachersListScreen.view)
             self.addChild(TeachersListScreen)
@@ -301,14 +307,64 @@ class ClassInfoViewController: UIViewController {
         
     }
     
+    func SortByAlphabet(array: [Student]) -> [Student] {
+        let sortedarray = array.sorted { name1, name2 in
+            let seperatedname1 = name1.name.components(separatedBy: " ")
+            let seperatedname2 = name2.name.components(separatedBy: " ")
+            let name1last = seperatedname1.last!
+            let name2last = seperatedname2.last!
+            let name1totalIndices = seperatedname1.count - 1
+            let name2totalIndices = seperatedname2.count - 1
+            var result: Bool!
+                        
+            if name1last == name2last {
+                if seperatedname1.count > seperatedname2.count {
+                    for num in 1...seperatedname2.count-1 {
+                        if seperatedname1[name1totalIndices - num] != seperatedname2[name2totalIndices - num] {
+                            result = seperatedname1[name1totalIndices - num].localizedCaseInsensitiveCompare(seperatedname2[name2totalIndices - num]) == .orderedAscending
+                            break
+                        }
+                        else {
+                            result = seperatedname1.first!.localizedCaseInsensitiveCompare(seperatedname2.first!) == .orderedAscending
+                        }
+                    }
+                    return result
+                }
+                else {
+                    for num in 1...seperatedname1.count-1 {
+                        if seperatedname1[name1totalIndices - num] != seperatedname2[name2totalIndices - num] {
+                            result = seperatedname1[name1totalIndices - num].localizedCaseInsensitiveCompare(seperatedname2[name2totalIndices - num]) == .orderedAscending
+                            break
+                        }
+                        else {
+                            result = seperatedname1.first!.localizedCaseInsensitiveCompare(seperatedname2.first!) == .orderedAscending
+                        }
+                    }
+                    return result
+                }
+            }
+            else {
+                result = name1last.localizedCaseInsensitiveCompare(name2last) == .orderedAscending
+                return result
+            }
+        }
+        
+        StudentsListScreen.choosensortingoptionLabel.text = "Sorted by: name"
+        StudentsListScreen.tableView.reloadData()
+        return sortedarray
+    }
     
     //MARK: - DidTap
     @objc func BackButtonDidTap(_ sender: UIButton) {
-        if ChildScreenIsOn == 1 {
+        switch ChildScreenIsOn {
+        case 1:
             navigationController?.popViewController(animated: true)
-        }
-        else {
-            present(choiceAlert, animated: true, completion: nil)
+        case 2:
+            present(choiceAlert1, animated: true, completion: nil)
+        case 3:
+            present(choiceAlert2, animated: true, completion: nil)
+        default:
+            return
         }
     }
 }

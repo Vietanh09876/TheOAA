@@ -98,7 +98,6 @@ class ClassListViewController: UIViewController {
         listTableView.reloadData()
     }
     
-    
     func CreateSectionButton() {
         for (index, value) in gradesarray.enumerated() {
             let sectionbutton: SectionButton = {
