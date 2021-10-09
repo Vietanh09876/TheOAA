@@ -16,6 +16,7 @@ class Student {
     var avatarimageurl: String!
     var useraccuid: String!
     
+    var scoreboardimageurl: [String]!
     var academicability: Float!
     var physicalability: Float!
     var adaptability: Float!

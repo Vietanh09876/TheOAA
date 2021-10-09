@@ -16,6 +16,7 @@ class ClassRoom {
     var classpoint: Int
     var studentlist: [String]
     var teacherlist: [String]
+    var grade: String
     
     init (SnapShot: QueryDocumentSnapshot) {
         self.classname = SnapShot["classname"] as! String
@@ -25,6 +26,7 @@ class ClassRoom {
         self.classpoint = SnapShot["classpoint"] as! Int
         self.studentlist = SnapShot["studentlist"] as! [String]
         self.teacherlist = SnapShot["teacherlist"] as! [String]
+        self.grade = SnapShot["grade"] as! String
     }
     
     init (DocSnapShot: DocumentSnapshot) {
@@ -35,5 +37,6 @@ class ClassRoom {
         self.classpoint = DocSnapShot["classpoint"] as! Int
         self.studentlist = DocSnapShot["studentlist"] as! [String]
         self.teacherlist = DocSnapShot["teacherlist"] as! [String]
+        self.grade = DocSnapShot["grade"] as! String
     }
 }

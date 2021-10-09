@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ClassMainInfoScreenViewController: UIViewController {
     
@@ -25,11 +26,13 @@ class ClassMainInfoScreenViewController: UIViewController {
     @IBOutlet weak var DeclineChangeButton: UIButton!
     
     //MARK: - Variable
+    var classroom: ClassRoom!
     var titlelabelarray = [UILabel]()
     var contentlabelarray = [UILabel]()
     var titletextarray: [String] = [" 1. Giới Thiệu:", " 2. Cán Sự Lớp:", " 3. Vị Trí:", " 4. Điểm Lớp:"]
     var isUserAClassStaff: Bool?
     var originalClassIntroductionText: String!
+    let userAccId = Auth.auth().currentUser!.uid
     
     var firstcontenttext: String!
     var seccondcontenttext: [String]!
@@ -109,9 +112,22 @@ class ClassMainInfoScreenViewController: UIViewController {
         DeclineChangeButton.isHidden = true
     }
     
+    //MARK: - Helper
+    func updateFirestoredata() {
+        let userRef = Firestore.firestore().collection("users").document(userAccId)
+        userRef.getDocument {[weak self] document, error in
+            guard let document = document, error == nil else {
+                return
+            }
+            let classRef = Firestore.firestore().collection(document["schoolname"] as! String).document(self!.classroom.grade).collection("ClassList").document(self!.classroom.classname)
+            classRef.updateData(["introduction": self!.FirstTextView.text!])
+        }
+    }
+    
     //MARK: - DidTap
     @IBAction func AcceptButtonDidTap(_ sender: Any) {
         FirstTextView.resignFirstResponder()
+        updateFirestoredata()
         DeclineChangeButton.isHidden = true
         AcceptChangeButton.isHidden = true
     }

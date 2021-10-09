@@ -106,6 +106,7 @@ class PersonalInfoViewController: UIViewController {
             let schoolname = data["schoolname"] as! String
             let classname = data["classname"] as! String
             let avatarimageurl = data["avatarimageurl"] as! String
+            let scoreboardimageurl = data["scoreboardimageurl"] as! [String]
             let academic = data["academicability"] as! Float
             let physical = data["physicalability"] as! Float
             let adapt = data["adaptability"] as! Float
@@ -117,6 +118,8 @@ class PersonalInfoViewController: UIViewController {
             let guardianphone = data["guardianphonenumber"] as! [String]
             
             self?.EvaluationScreen.user = Student(name: name, id: id, avatarimageurl: avatarimageurl, schoolname: schoolname, classname: classname, classrole: nil, academic: academic, physical: physical, adapt: adapt, social: social, reli: reli,previousscore: previousscore)
+            
+            self?.ScoreboardScreen.scoreboardimageurl = scoreboardimageurl
             
             self?.InfoScreen.avatarimageurl = avatarimageurl
             if self?.userAccId == Auth.auth().currentUser?.uid {

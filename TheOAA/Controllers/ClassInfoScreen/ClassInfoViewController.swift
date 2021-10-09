@@ -176,6 +176,7 @@ class ClassInfoViewController: UIViewController {
         ClassMainInfoScreen.seccondcontenttext = classroom.classstaff
         ClassMainInfoScreen.thirdcontenttext = classroom.location
         ClassMainInfoScreen.fourthcontenttext = classroom.classpoint
+        ClassMainInfoScreen.classroom = classroom
         
         fetchDataForStudentList()
     }

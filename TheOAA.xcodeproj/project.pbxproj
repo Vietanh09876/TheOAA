@@ -64,7 +64,7 @@
 		C651B3E1270384B3003CEEFA /* EvaluationCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C651B3DF270384B3003CEEFA /* EvaluationCardViewController.xib */; };
 		C651B3E4270386A1003CEEFA /* EvaluationCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651B3E2270386A1003CEEFA /* EvaluationCardCell.swift */; };
 		C651B3E5270386A1003CEEFA /* EvaluationCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C651B3E3270386A1003CEEFA /* EvaluationCardCell.xib */; };
-		C660ED5A270EDD6100E4026D /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660ED59270EDD6100E4026D /* Class.swift */; };
+		C660ED5A270EDD6100E4026D /* ClassRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660ED59270EDD6100E4026D /* ClassRoom.swift */; };
 		C67A5DD026F5CFE90078E33A /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A5DCE26F5CFE90078E33A /* AchievementCell.swift */; };
 		C67A5DD126F5CFE90078E33A /* AchievementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67A5DCF26F5CFE90078E33A /* AchievementCell.xib */; };
 		C67A5DD426F626B20078E33A /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A5DD226F626B20078E33A /* MyInfoViewController.swift */; };
@@ -186,7 +186,7 @@
 		C651B3DF270384B3003CEEFA /* EvaluationCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EvaluationCardViewController.xib; sourceTree = "<group>"; };
 		C651B3E2270386A1003CEEFA /* EvaluationCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationCardCell.swift; sourceTree = "<group>"; };
 		C651B3E3270386A1003CEEFA /* EvaluationCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EvaluationCardCell.xib; sourceTree = "<group>"; };
-		C660ED59270EDD6100E4026D /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		C660ED59270EDD6100E4026D /* ClassRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRoom.swift; sourceTree = "<group>"; };
 		C67A5DCE26F5CFE90078E33A /* AchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		C67A5DCF26F5CFE90078E33A /* AchievementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementCell.xib; sourceTree = "<group>"; };
 		C67A5DD226F626B20078E33A /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 				C624A90126E89CE5007B8B49 /* User.swift */,
 				C6142942270D5A950054E1A3 /* SubAchievement.swift */,
 				C6142944270D5E8C0054E1A3 /* MainAchievement.swift */,
-				C660ED59270EDD6100E4026D /* Class.swift */,
+				C660ED59270EDD6100E4026D /* ClassRoom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -900,7 +900,7 @@
 				C6A9D64326FAD79E0036B708 /* AddSubAchievementViewController.swift in Sources */,
 				C628546826F198BC007AC431 /* EvaluationViewController.swift in Sources */,
 				C628548426F42997007AC431 /* UIButton+Extension.swift in Sources */,
-				C660ED5A270EDD6100E4026D /* Class.swift in Sources */,
+				C660ED5A270EDD6100E4026D /* ClassRoom.swift in Sources */,
 				C6C233BA2708D2D200C7579F /* IQUIViewController+Additions.swift in Sources */,
 				C67A5DD026F5CFE90078E33A /* AchievementCell.swift in Sources */,
 				C651B3E4270386A1003CEEFA /* EvaluationCardCell.swift in Sources */,

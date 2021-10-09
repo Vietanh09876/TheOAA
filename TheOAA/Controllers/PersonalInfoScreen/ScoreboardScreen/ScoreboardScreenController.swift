@@ -7,11 +7,16 @@
 
 import UIKit
 
+
 class ScoreboardScreenController: UIViewController {
     //MARK: - Outlet
     @IBOutlet weak var CustomSegmentControl: CustomSegmentControl!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scoreboardImageView: UIImageView!
+    
+    //MARK: - Variable
+    var scoreboardimageurl: [String]!
+    let cache = NSCache<NSString, AnyObject>()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -57,15 +62,37 @@ class ScoreboardScreenController: UIViewController {
     func changescoreboardimage(x: Int) {
         switch x {
         case 1:
-            scoreboardImageView.image = UIImage(named: "Unknown")
+            downloadImage(urlstring: scoreboardimageurl[x-1])
         case 2:
-            return
+            downloadImage(urlstring: scoreboardimageurl[x-1])
         case 3:
-            return
+            downloadImage(urlstring: scoreboardimageurl[x-1])
         default:
             return
         }
         
+    }
+    
+    func downloadImage(urlstring: String) {
+        if let cachedimage = imagecache.object(forKey: urlstring as NSString) as? UIImage {
+            self.scoreboardImageView.image = cachedimage
+        }
+        else {
+            DispatchQueue.global().async {
+                guard let photourl = URL(string: urlstring) ,let data = try? Data.init(contentsOf: photourl)  else {
+                    DispatchQueue.main.async {
+                        self.scoreboardImageView.image = UIImage(named: "Unknown")
+                    }
+                    return
+                }
+                let downloadedimage = UIImage.init(data: data)
+                self.cache.setObject(downloadedimage!, forKey: urlstring as NSString)
+                
+                DispatchQueue.main.async {
+                    self.scoreboardImageView.image = downloadedimage
+                }
+            }
+        }
     }
     
 }
