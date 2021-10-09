@@ -24,7 +24,8 @@ class PersonalInfoViewController: UIViewController {
     let EvaluationScreen = EvaluationViewController()
     let ScoreboardScreen = ScoreboardScreenController()
     let InfoScreen = InfoViewController()
-    
+    let failAlert = UIAlertController(title: "Thất Bại", message: "Không thể lấy thông tin người dùng", preferredStyle: .alert)
+
     var userAccId: String?
     let db = Firestore.firestore()
     var userFirestoreDoc: DocumentReference!
@@ -33,7 +34,7 @@ class PersonalInfoViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupAlert()
         viewConfig()
         
         self.CustomTabBar.pressedbuttonindex = {[weak self] x in
@@ -74,7 +75,18 @@ class PersonalInfoViewController: UIViewController {
         
     }
     
-    
+    private func setupAlert() {
+        let tryagain = UIAlertAction(title: "Thử Lại?", style: .default) { _ in
+            self.fetchData()
+        }
+        
+        let cancel = UIAlertAction(title: "Huỷ Bỏ", style: .destructive) { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        failAlert.addAction(cancel)
+        failAlert.addAction(tryagain)
+    }
     
     
     //MARK: - Helper
@@ -92,12 +104,14 @@ class PersonalInfoViewController: UIViewController {
             guard let document = document else {
                 print("Error fetching document: \(error!)")
                 self?.CustomTabBar.isHidden = true
+                self?.present(self!.failAlert, animated: true, completion: nil)
                 ProgressHUD.dismiss()
                 return
             }
             guard let data = document.data() else {
                 print("Document data was empty.")
                 self?.CustomTabBar.isHidden = true
+                self?.present(self!.failAlert, animated: true, completion: nil)
                 ProgressHUD.dismiss()
                 return
             }

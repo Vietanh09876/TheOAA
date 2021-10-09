@@ -208,6 +208,7 @@ extension InfoViewController: PHPickerViewControllerDelegate {
                     guard let image = image as? UIImage, self?.userpictureImage.image == previousImage else { return }
                     
                     ProgressHUD.show()
+                    self?.userpictureImage.image = image
                     self?.uploadNewAvatarPictureToStorage(datapng: image.pngData())
                 }
             }
