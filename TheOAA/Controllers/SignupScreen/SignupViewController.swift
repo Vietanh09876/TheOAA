@@ -150,6 +150,10 @@ class SignupViewController: UIViewController {
     func CheckDataValid() {
         isDataValid = true
         for (ind, va) in TextFieldArray.enumerated() {
+            if TextFieldArray[0].text!.isEmpty || TextFieldArray[0].text!.contains("@") == false || TextFieldArray[0].text!.contains(".") == false {
+                TextFieldArray[0].textColor = UIColor().WarningTextColor()
+                isDataValid = false
+            }
             if va.text!.isEmpty {
                 LabelArray[ind].textColor = UIColor().WarningTextColor()
                 isDataValid = false

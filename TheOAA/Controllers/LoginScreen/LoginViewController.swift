@@ -71,7 +71,7 @@ class LoginViewController: UIViewController {
         forgotButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         forgotButton.titleLabel?.textAlignment = .right
         
-        signupButton.isHidden = true
+        signupButton.isHidden = false
         signupButton.setAttributedTitle(SignupButtonAttributedString, for: .normal)
         signupButton.setTitleColor(UIColor().MainTextColor(alpha: 0.7), for: .normal)
         signupButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
@@ -109,7 +109,8 @@ class LoginViewController: UIViewController {
             val?.delegate = self
         }
         
-        
+        idTextField.placeholder = "Email"
+        passwordTextField.placeholder = "Mật Khẩu"
         
         idTextField.keyboardType = .emailAddress
         passwordTextField.isSecureTextEntry = true
