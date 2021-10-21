@@ -20,6 +20,6 @@ class SubAchievement {
         self.description = SnapShot.data()["description"] as! String
         self.imageurl = SnapShot.data()["imageurl"] as! String
         self.id = SnapShot.reference.documentID
-        self.reward = SnapShot.data()["reward"] as! String
+        self.reward = (SnapShot.data()["reward"] as? String) ?? "ok"
     }
 }

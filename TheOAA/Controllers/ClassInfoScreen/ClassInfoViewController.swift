@@ -10,13 +10,13 @@ import Firebase
 import ProgressHUD
 
 class ClassInfoViewController: UIViewController {
-
+    
+    //MARK: - Outlet
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var CustomNavigationBar: CustomNavigationBar!
     @IBOutlet weak var CustomTabbar: CustomTabBar!
     @IBOutlet weak var containerForChildView: UIView!
-    
     
     //MARK: - Variable
     var classroom: ClassRoom!

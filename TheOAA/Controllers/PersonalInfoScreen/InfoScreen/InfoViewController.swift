@@ -28,6 +28,7 @@ class InfoViewController: UIViewController {
     let communicationview = CommunicationViewController()
     let achievementview = AchievementViewController()
     var viewIsOn: Int!
+    var isnotUser: Bool = true
     
     let userAccId = Auth.auth().currentUser!.uid
     
@@ -91,6 +92,7 @@ class InfoViewController: UIViewController {
         changeuserimageButton.setImage(UIImage(systemName: "pencil", withConfiguration: changeimageButtonImageConfig), for: .normal)
         changeuserimageButton.tintColor = UIColor().MainTextColor(alpha: 1)
         changeuserimageButton.setTitle(nil, for: .normal)
+        changeuserimageButton.isHidden = isnotUser
     }
     
     //MARK: - Helper

@@ -164,11 +164,13 @@ class LoginViewController: UIViewController {
     }
     
     
-    //MARK: - UIButton Action
+    //MARK: - DidTap
     @IBAction func forgotButtonDidTap(_ sender: UIButton) {
         if idTextField.text!.isEmpty || idTextField.text!.contains("@") == false || idTextField.text!.contains(".") == false  {
             idLabel.textColor = UIColor(red: 0.64, green: 0.20, blue: 0.20, alpha: 1.00)
-            
+            warningLabel.text = "Bạn chưa điền email"
+            warningLabel.textColor = UIColor().WarningTextColor()
+            warningLabel.isHidden = false
         }
         else {
             idLabel.textColor = UIColor().MainTextColor(alpha: 0.7)

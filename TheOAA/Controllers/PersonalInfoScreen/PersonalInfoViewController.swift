@@ -139,6 +139,7 @@ class PersonalInfoViewController: UIViewController {
             if self?.userAccId == Auth.auth().currentUser?.uid {
                 self?.InfoScreen.myinfoview.personalinfo = [name]
                 self?.InfoScreen.myinfoview.personalinfo.append(contentsOf: personalinfo)
+                self?.InfoScreen.isnotUser = false
             }
             self?.InfoScreen.communicationview.user = Student(personalinfo: personalinfo, guardianname: guardianname, guardianphone: guardianphone)
             
