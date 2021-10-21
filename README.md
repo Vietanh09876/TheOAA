@@ -9,7 +9,9 @@
 Sử dụng **tài khoản được đăng ký trước** để có dữ liệu từ Firestore:
 * Email: nguyenvietanh09876@gmail.com (recommended)
 * Mật khẩu: ngaodaman09
+
 hoặc
+
 * Email: ngaodaman09@gmail.com
 * Mật khẩu: ngaodaman09 
 
